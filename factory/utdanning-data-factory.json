@@ -1,0 +1,9 @@
+{
+	"name": "utdanning-data-factory",
+	"location": "northcentralus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "84aa5e55-1fef-46a4-ae5a-cfd6d388b155",
+		"tenantId": "4e7f212d-74db-4563-a57b-8ae44ed05526"
+	}
+}
