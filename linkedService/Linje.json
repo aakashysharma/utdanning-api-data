@@ -1,0 +1,13 @@
+{
+	"name": "Linje",
+	"properties": {
+		"description": "Fetches Linje articles from the API https://api.utdanning.no/linje/artikkel\n[\n  {\n    \"nid\": \"Unknown Type: int\",\n    \"tittel\": \"string\",\n    \"ingress\": \"string\",\n    \"kategori\": \"string\",\n    \"bilde_src\": \"string\",\n    \"bilde_alt\": \"string\",\n    \"paragraphs\": [\n      {\n        \"tittel\": \"string\",\n        \"tekst\": \"string\",\n        \"bilde_src\": \"string\",\n        \"bilde_alt\": \"string\",\n        \"knapp_href\": \"string\",\n        \"knapp_tekst\": \"string\"\n      }\n    ]\n  }\n]",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.utdanning.no/linje/artikkel",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
