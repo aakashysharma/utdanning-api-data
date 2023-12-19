@@ -1,0 +1,12 @@
+{
+	"name": "SourceDataset_c97",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Linje",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "RestResource",
+		"schema": []
+	}
+}
