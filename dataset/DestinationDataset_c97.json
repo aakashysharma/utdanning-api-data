@@ -1,0 +1,23 @@
+{
+	"name": "DestinationDataset_c97",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "DevBlobStorage",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "linjedata.json",
+				"container": "linje"
+			},
+			"compression": {
+				"type": "ZipDeflate",
+				"level": "Fastest"
+			}
+		},
+		"schema": {}
+	}
+}

@@ -1,0 +1,104 @@
+{
+	"name": "CopyPipeline_linje",
+	"properties": {
+		"description": "Development pipeline to copy linje data from API",
+		"activities": [
+			{
+				"name": "Copy_c97",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [
+					{
+						"name": "Destination",
+						"value": "linje//linjedata.json"
+					}
+				],
+				"typeProperties": {
+					"source": {
+						"type": "RestSource",
+						"httpRequestTimeout": "00:01:40",
+						"requestInterval": "00.00:00:00.010",
+						"requestMethod": "GET"
+					},
+					"sink": {
+						"type": "JsonSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "JsonWriteSettings",
+							"filePattern": "setOfObjects"
+						}
+					},
+					"enableStaging": false,
+					"validateDataConsistency": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['nid']"
+								},
+								"sink": {
+									"path": "$['nid']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['tittel']"
+								},
+								"sink": {
+									"path": "$['tittel']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['ingress']"
+								},
+								"sink": {
+									"path": "$['ingress']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['kategori']"
+								},
+								"sink": {
+									"path": "$['kategori']"
+								}
+							},
+							{
+								"source": {
+									"path": "tekst"
+								},
+								"sink": {
+									"path": "$['paragraphs']"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SourceDataset_c97",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "DestinationDataset_c97",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
