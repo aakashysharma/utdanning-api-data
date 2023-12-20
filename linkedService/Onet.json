@@ -1,0 +1,13 @@
+{
+	"name": "Onet",
+	"properties": {
+		"description": "Onet codes",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.utdanning.no/onet/onet_by_occupation",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}
